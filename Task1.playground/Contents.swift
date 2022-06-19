@@ -29,3 +29,31 @@ func treangle (_ a: Double, _ b: Double) -> () {
 }
 
 treangle(10, 10)
+
+/*func vklad (sum: Int, percent: Int) -> () {
+    let sum1 = sum
+    let perc = percent / 100
+    var number = 1
+    while number <= 5 {
+        (sum1 * perc) + sum1
+       number += 1
+        print(sum1)
+    }
+}
+ */
+var sum = 1000.0
+var percent = 9.0
+var percent2 = percent / 100.0
+var number = 1.0
+var result = 0.0
+
+
+var year1 = (sum * percent2) + sum
+var year2 = (year1 * percent2) + year1
+var year3 = (year2 * percent2) + year2
+var year4 = (year3 * percent2) + year3
+var year5 = (year4 * percent2) + year4
+
+print("Сумма вклада за пять лет при ставке 9% составит \(year5)")
+
+for 

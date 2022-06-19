@@ -17,15 +17,6 @@ class Car {
         self.data = data
         self.color = color
     }
-    
-    func windowOption (status: windowsAre) {
-        switch windows {
-        case windowsAre.close:
-            self.windows = windowsAre.open
-        default:
-            self.windows = windowsAre.close
-        }
-    }
 }
 
 class SportCar: Car {
@@ -67,15 +58,19 @@ class TrunkCar:Car {
               }
 }
 }
+protocol CarInfo {
+   var model: String {get set}
+    var price: Int {get set}
+    mutating func sellInfo () -> String
+}
 
-var kamazik = TrunkCar (data: "2016", color: "black")
-kamazik.loadTrunk(weight: 10)
-print(kamazik.currentTrunkLoad)
-kamazik.unLoadTrunk(weight1: 5)
+extension CarInfo {
+mutating func windowOption (status: windowsAre) {
+    switch windows {
+    case windowsAre.close:
+        self.windows = windowsAre.open
+    default:
+        self.windows = windowsAre.close
+    }
 
-var volga = SportCar (data: "1980", color: "White")
-print(volga.windows)
-volga.windowOption(status: .close)
-print(volga.windows)
-volga.changeSpeed(speed: 100)
-volga.currentSpeed
+}
